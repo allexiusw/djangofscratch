@@ -19,6 +19,6 @@ def add_hours(request, add):
     now = datetime.datetime.now()
     now_added = now + datetime.timedelta(add)
     t = get_template('current_datetime.html')
-    html = t.render(Context({'now': now, 'now_added':now_added, 'add':add}))
+    html = t.render({'now': now, 'now_added':now_added, 'add':add})
     return HttpResponse(html)
 
