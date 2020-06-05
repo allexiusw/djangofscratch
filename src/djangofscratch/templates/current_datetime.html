@@ -1,7 +1,6 @@
-<html>
-    {% include 'head.html' %}
-    <body>
-        Date is {{now}} plus {{add}} days is {{now_added}} 
-        {% include 'footer.html' %}
-    </body>
-</hmtl>
+{% extends 'base.html' %}
+{% block title %}The current time{% endblock %}
+{% block content %}
+    Date is {{now}} plus {{add}} days is {{now_added}} 
+{%  endblock %}
+{% block footer %}{% endblock %}
