@@ -1,5 +1,6 @@
 from django.http import HttpResponse, Http404
 import datetime
+from django.shortcuts import render
 from django.template.loader import get_template
 from django.template import Context
 
@@ -18,7 +19,5 @@ def add_hours(request, add):
         raise Http404()
     now = datetime.datetime.now()
     now_added = now + datetime.timedelta(add)
-    t = get_template('current_datetime.html')
-    html = t.render({'now': now, 'now_added':now_added, 'add':add})
-    return HttpResponse(html)
+    return render(None, 'current_datetime.html', {'now': now, 'now_added':now_added, 'add':add})
 
