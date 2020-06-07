@@ -7,9 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    {% block other_css %}
-    {% endblock other_css %}
-    <title>Hello, world!</title>
+    {% block other_css %}{% endblock other_css %}
+    <title> {% block title %}Welcome to BooksLibrary{% endblock title %}</title>
   </head>
   <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
