@@ -5,7 +5,7 @@ from django.template.loader import get_template
 from django.template import Context
 
 def hello(request):
-    return HttpResponse("Hello world")
+    return render(None, 'index.html')
 
 def datetime_dynamic(request):
     now = datetime.datetime.now()

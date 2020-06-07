@@ -19,8 +19,8 @@ from djangofscratch.views import hello, datetime_dynamic, add_hours
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', hello),
-    re_path('^$', hello),
-    path('datetime_dynamic/', datetime_dynamic),
+    path('hello/', hello, name='hello'),
+    re_path('^$', hello, name='hello'),
+    path('datetime_dynamic/', datetime_dynamic, name="time"),
     re_path(r'^time/plus/(?P<add>[0-9]{2})/$', add_hours),
 ]
