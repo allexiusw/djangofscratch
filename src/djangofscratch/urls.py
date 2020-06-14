@@ -15,12 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from djangofscratch.views import hello, datetime_dynamic, add_hours
+from djangofscratch.views import books
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', hello),
-    re_path('^$', hello),
-    path('datetime_dynamic/', datetime_dynamic),
-    re_path(r'^time/plus/(?P<add>[0-9]{2})/$', add_hours),
+    re_path('^$', books, name='home'),
+    path('books/', books, name='books'),
 ]
