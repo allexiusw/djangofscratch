@@ -21,7 +21,7 @@ class Publisher(models.Model):
 class Author(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=40)
-    email = models.EmailField()
+    email = models.EmailField(verbose_name='e-mail')
     
     class Meta:
         ordering = ['last_name']
