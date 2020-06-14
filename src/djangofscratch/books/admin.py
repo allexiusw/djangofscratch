@@ -1,7 +1,4 @@
 from django.contrib import admin
-
-# Register your models here.
-from django.contrib import admin
 from djangofscratch.books.models import Publisher, Author, Book
 
 
