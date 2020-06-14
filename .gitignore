@@ -128,5 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-#my avoided files
+# my avoided files
 *.pyc
