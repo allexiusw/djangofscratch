@@ -12,6 +12,8 @@ class Bookdmin(admin.ModelAdmin):
     date_hierarchy = 'publication_date'
     ordering = ('title', )
     filter_horizontal = ('authors', )
+    fields = ('title', 'authors', 'publisher', )
+    raw_id_fields = ('publisher', )
 
 admin.site.register(Publisher)
 admin.site.register(Author, AuthorAdmin)
