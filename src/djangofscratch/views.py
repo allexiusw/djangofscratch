@@ -5,7 +5,7 @@ from django.template.loader import get_template
 from django.template import Context
 
 def home(request):
-    return render(None, 'index.html')
+    return render(None, 'index.html', data)
 
 def books(request):
     return render(None, 'index.html')
