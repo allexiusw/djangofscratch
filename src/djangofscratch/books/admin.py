@@ -9,6 +9,9 @@ class AuthorAdmin(admin.ModelAdmin):
 class Bookdmin(admin.ModelAdmin):
     list_display = ('title', 'authors_list', 'publisher', 'publication_date')
     search_fields = ('title', 'publication_date')
+    date_hierarchy = 'publication_date'
+    ordering = ('title', )
+    filter_horizontal = ('authors', )
 
 admin.site.register(Publisher)
 admin.site.register(Author, AuthorAdmin)
