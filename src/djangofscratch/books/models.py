@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.html import mark_safe
 
 class Publisher(models.Model):
     name = models.CharField(max_length=30)
@@ -47,5 +48,14 @@ class Book(models.Model):
     
     def __str__(self):
         return self.title.title()
-    
+
+    @property
+    def authors_list(self):
+        dev =''
+        authors = self.authors.all()
+        if authors is not None:
+            for author in authors:
+                dev+=author.first_name+"<br>"
+        dev = mark_safe(dev)
+        return dev
 

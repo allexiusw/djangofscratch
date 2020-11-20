@@ -131,3 +131,4 @@ dmypy.json
 
 # my avoided files
 *.pyc
+*.sqlite3
