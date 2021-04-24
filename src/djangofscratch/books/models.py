@@ -63,6 +63,8 @@ class Book(models.Model):
 
 class Country(models.Model):
     name = models.CharField("Nombre", max_length=200)
+    country_code = models.CharField("Código de país", max_length=10, default='503')
+    flag = models.CharField('Bandera', max_length=10, default='lag-icon flag-icon-slv')
 
     class Meta:
         verbose_name = "País"
