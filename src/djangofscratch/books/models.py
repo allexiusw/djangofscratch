@@ -59,3 +59,16 @@ class Book(models.Model):
         dev = mark_safe(dev)
         return dev
 
+
+class Student(models.Model):
+    name = models.CharField("Nombre", max_length=200)
+    edad = models.IntegerField("Edad", default=18)
+
+
+    class Meta:
+        verbose_name = "Estudiante"
+        verbose_name_plural = "Estudiantes"
+
+    def __str__(self):
+        return self.name
+        
