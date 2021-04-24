@@ -60,10 +60,22 @@ class Book(models.Model):
         return dev
 
 
+
+class Country(models.Model):
+    name = models.CharField("Nombre", max_length=200)
+
+    class Meta:
+        verbose_name = "País"
+        verbose_name_plural = "Países"
+
+    def __str__(self):
+        return self.name
+
+
 class Student(models.Model):
     name = models.CharField("Nombre", max_length=200)
     edad = models.IntegerField("Edad", default=18)
-
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, blank=True, null=True)
 
     class Meta:
         verbose_name = "Estudiante"
