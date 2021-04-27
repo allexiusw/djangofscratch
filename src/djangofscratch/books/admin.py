@@ -1,5 +1,5 @@
 from django.contrib import admin
-from djangofscratch.books.models import Publisher, Author, Book
+from djangofscratch.books.models import Country, Publisher, Author, Book, Student
 
 
 class AuthorAdmin(admin.ModelAdmin):
@@ -18,3 +18,5 @@ class Bookdmin(admin.ModelAdmin):
 admin.site.register(Publisher)
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Book, Bookdmin)
+admin.site.register(Student)
+admin.site.register(Country)

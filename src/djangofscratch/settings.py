@@ -75,9 +75,13 @@ WSGI_APPLICATION = 'djangofscratch.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': {
+        'ENGINE': os.getenv('DB_DRIVER','django.db.backends.postgresql'),
+        'NAME': os.getenv('DB_NAME', 'djfdb'),
+        'USER': os.getenv('DB_USER', 'djfdb'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'djfdb'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
 
@@ -119,3 +123,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EMAIL_ADMIN = "admin@test.test"

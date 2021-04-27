@@ -59,3 +59,30 @@ class Book(models.Model):
         dev = mark_safe(dev)
         return dev
 
+
+
+class Country(models.Model):
+    name = models.CharField("Nombre", max_length=200)
+    country_code = models.CharField("Código de país", max_length=10, default='503')
+    flag = models.CharField('Bandera', max_length=10, default='lag-icon flag-icon-slv')
+
+    class Meta:
+        verbose_name = "País"
+        verbose_name_plural = "Países"
+
+    def __str__(self):
+        return self.name
+
+
+class Student(models.Model):
+    name = models.CharField("Nombre", max_length=200)
+    edad = models.IntegerField("Edad", default=18)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, blank=True, null=True)
+
+    class Meta:
+        verbose_name = "Estudiante"
+        verbose_name_plural = "Estudiantes"
+
+    def __str__(self):
+        return self.name
+        
